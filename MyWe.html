@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPOLMHS School Forms & Reports Management System</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        #loginForm {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #content {
+            display: none;
+        }
+
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: 0;
+        }
+
+        .printInstructions {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .printButton {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>School Forms Management System</h1>
+
+    <!-- Password Form -->
+    <div id="loginForm">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password">
+        <button onclick="validatePassword()">Submit</button>
+        <p id="errorMessage" style="color:red;"></p>
+    </div>
+
+    <!-- Embed Excel File (Initially Hidden) -->
+    <div id="content">
+        <!-- Embed the OneDrive Excel File (Replace with the actual link) -->
+        <iframe width="100%" height="60%" frameborder="0" scrolling="no" src="https://depedph-my.sharepoint.com/personal/albert_butad_deped_gov_ph/_layouts/15/Doc.aspx?sourcedoc={78ca9bc7-fc03-4ccc-b060-3719c75993ff}&action=embedview&AllowTyping=True&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+
+
+    </div>
+
+    <script>
+        function validatePassword() {
+            var enteredPassword = document.getElementById("password").value;
+            var correctPassword = "pogiTayo"; // Set your desired password here
+
+            if (enteredPassword === correctPassword) {
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            } else {
+                document.getElementById("errorMessage").textContent = "Incorrect password. Try again.";
+            }
+        }
+
+    </script>
+</body>
+</html>
